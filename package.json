@@ -1,0 +1,27 @@
+{
+  "name": "social_network_api",
+  "version": "1.0.0",
+  "description": "API for a social network",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blayne-04/social_network_api.git"
+  },
+  "author": "Blayne Fuller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blayne-04/social_network_api/issues"
+  },
+  "homepage": "https://github.com/blayne-04/social_network_api#readme",
+  "devDependencies": {
+    "eslint": "^8.40.0",
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.1.0"
+  }
+}
