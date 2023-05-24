@@ -75,7 +75,8 @@ module.exports = {
     try {
       const reaction = await Thoughts.findOneAndUpdate(
         {_id: req.params.thoughtID},
-        {$push: {reactions: req.body}}
+        {$push: {reactions: req.body}},
+        {new: true}
       )
       if(!reaction){
         return res.status(404).json({message: 'Thought not found'})
@@ -89,12 +90,13 @@ module.exports = {
     try {
       const reaction = await Thoughts.findOneAndUpdate(
         {_id: req.params.thoughtID},
-        {$pull: {reactions: req.body._id}}
+        {$pull: {reactions: { _id: req.body.reactionID}}},
+        {new: true}
       )
       if(!reaction){
         return res.status(404).json({message: 'No reaction found with that ID'})
       }
-      return res.status(200).json({message: 'Reaction Deleted'})
+      return res.status(200).json(reaction)
     } catch (err) {
       return res.status(500).json(err)
     }
